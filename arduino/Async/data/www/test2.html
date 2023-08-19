@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<style type="text/css">
+		body{
+
+		}
+		.boxLeft{
+			height: 600px;
+			overflow-y: auto;
+		}
+		.bc{
+			background: #E9EDC9;
+		}
+		.n{	
+			background: #fefae0;
+			width: 100%;
+			position: absolute;
+			bottom: 0px;
+			top: 56px;
+		}
+		.bg{
+			background: #D4A373;
+		}
+		.Ctitle{
+			background: #CCD5AE;
+			color: #1f1e33;
+			font-size: 20px;
+		}
+		#BTNS{
+			border-color: #1f1e33;
+		}
+		.hide{
+			display:  none;
+		}
+		.show{
+			display: block;
+		}
+		.content{	
+			background: #fefae0;
+			width: 100%;
+			position: absolute;
+			bottom: 0px;
+			top: 56px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			padding-left: 250px;
+			padding-right: 250px;
+		}
+		.footer{
+			width: 100%;
+			background: #FAEDCD;
+			position: absolute;
+			bottom: 0;
+		}
+		tr{
+			height: 90px;
+		}
+		td{
+			width: 50%;
+		}
+		table{
+			background: #F6E4C2;
+			border: #d4a373 inset;
+			height: 60%;
+		}
+		.push{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+	<!-- head -->
+	<nav class="navbar navbar-expand-lg bg navbar-dark">
+	  <a class="navbar-brand" href="#"><i class="fas fa-home mr-2" ></i>Smart House</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav ml-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link">logout<span class="sr-only">(current)</span></a>
+	      </li>
+	  </div>
+	</nav>
+	<!-- content -->
+	<div class="n">
+		<div class="container-fluid pb-3 pt-3  m-0">
+			<div class="row">
+				<div class="col-lg-2 col-md-12"></div>
+				<!-- left -->
+				<div class="boxLeft col-lg-3 col-md-12 mb-2 pt-5">
+					<div id="BTNS" class="card tc">
+						<div class="card-header Ctitle">
+						 	<B>功能選單</B>
+						</div>
+						<ul  class="list-group list-group-flush">
+						  	<li class="list-group-item list bc" name="OFF">
+								電器列表
+						  	</li>
+						 	<ul class="hide" id="list">
+						  	</ul>
+						</ul>
+					</div>
+				</div>
+				<!-- right -->
+				<div class="col-lg-5 col-md-12 pt-5">
+					<table class="container-fluid " >
+						<tr>
+							<td colspan="2">
+								<H1 class="d-flex justify-content-center" id="var0">歡迎使用Smart House</H1>
+								<div class="form-floating">
+								  <textarea class="form-control hide" placeholder="" id="txt0"></textarea>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<H2 class="d-flex justify-content-center v1"></H2>
+							</td>
+							<td>
+								<H2 class="d-flex justify-content-left" id="var1"></H2>
+								<div class="form-floating">
+								  <textarea class="form-control hide" placeholder="" id="txt1"></textarea>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<H2 class="d-flex justify-content-center v2"></H2>
+							</td>
+							<td>
+								<H2 class="d-flex justify-content-left" id="var2"></H2>
+								<select class="form-select hide" id="select" aria-label="Default select example">
+								  <option selected value="0">Open this select menu</option>
+								  <option value="1">1</option>
+								  <option value="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								  <option value="5">5</option>
+								  <option value="6">6</option>
+								  <option value="7">7</option>
+								  <option value="8">8</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="d-flex justify-content-center">
+									<button type="button" class="switch hide">開關</button>
+								</div>
+							</td>
+							<td>
+								<div class="d-flex justify-content-center">
+									<button type="button" class="modify hide">修改</button>
+								</div>
+								<div class="hide" id="root"></div>
+							</td>
+						</tr>
+					</table>
+			</div>
+			<div class="col-lg-2 col-md-12 "></div>
+		</div> 
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="container container-fluid py-2 d-flex justify-content-between tc">
+			<span class="tc ">
+				組別:第五組
+			</span>
+			<span class="tc ">
+				小組成員:胡祐豪、郭世緯、彭亞謙、翁瑞璟、黃宇綸
+			</span>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		var token;
+		// $(window).bind('beforeunload',function(e){
+		// 	$.ajax({
+	    //         type: "GET",
+	    //         url: '/refresh',
+	    //         data:{
+	    //         	token:token
+	    //         },
+	    //         error: function(data){
+	    //             alert("您的登入憑證已失效，請重新登入");
+	    //         },
+	    //         success: function(data){
+
+	    //         }
+	    //     });
+		// });
+	    $(".nav-link").on('click',function(){
+			$.get("/logout", {func:"logout"});
+			let url=$(location).attr('href');
+			let arr= url.split('/home');
+			window.location.replace(arr[0]);
+		});
+	    $(".fa-home").hover(function(){
+	    	$(this).attr('class','fas fa-home fa-spin mr-2');
+	    },function(){
+	    	$(this).attr('class','fas fa-home mr-2');
+	    });
+	    
+	    $(document).on('click','.push',function(){
+	    	$(".switch").attr('class','btn btn-outline-secondary switch btn-lg');
+	    	$(".switch").html("開關");
+	    	$(".modify").attr('class','btn btn-outline-danger modify btn-lg');
+	    	$(".modify").html("修改");
+	    	$(".v1").html("狀態");
+	    	$(".v2").html("腳位");
+	    	$("#var0").html($(this).find(".var0").html());
+	    	$("#var1").html($(this).find(".var1").html());
+	    	$("#var2").html($(this).find(".var2").html());
+	    	$("#root").html($(this).find(".root").html());
+	    	$("#txt0").attr('class','form-control hide');
+    		$("#txt1").attr('class','form-control hide');
+    		$("#select").attr('class','form-select hide');
+	    });
+		</script>
+		<script type="module">
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+			import {getDatabase ,ref,set,onValue,remove} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
+			const firebaseConfig = {
+			  apiKey: "AIzaSyBzRAbWytJdZTZlU99rz9sTO1teBdZrVJw",
+			  authDomain: "arduino-da53c.firebaseapp.com",
+			  databaseURL: "https://arduino-da53c-default-rtdb.firebaseio.com",
+			  projectId: "arduino-da53c",
+			  storageBucket: "arduino-da53c.appspot.com",
+			  messagingSenderId: "332226206687",
+			  appId: "1:332226206687:web:1794175a601b7c3189426a",
+			  measurementId: "G-587C0KPN7H"
+			};
+			// // Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+			const db = getDatabase();
+			var txt="";
+			get_list();
+			function get_list(){
+					txt="";
+			      	const starCountRef = ref(db,'webtest');
+					onValue(starCountRef, (snapshot) => {
+					  var data = snapshot.val();
+					  for(let i in data){
+			      		txt+="<li class='list-group-item pl-5 bc push'>電器名稱:<div class='var0'>"+data[i].name+"</div>  <div class='hide'>變數1:<div class='var1'>"+data[i].state+"</div>  變數2:<div class='var2'>"+data[i].pin+"</div> <div class='root'>"+data[i].root+"</div></div></li>";
+			      		console.log(data[i]);
+					  }
+					});
+			}
+			$(document).on('click','.modify',function(){
+		    	if($(this).html().indexOf("修改")!=-1){
+		    		$(this).html("確定");
+		    		$(".switch").attr('class','switch hide');
+		    		$("#txt0").attr('class','form-control');
+		    		$("#select").attr('class','form-select');
+		    		$("#var0").html("");
+		    		$("#var2").html("");
+		    	}else{
+		    		if($("#txt0").val()!=""&& $("#select").val()!="0"){
+						$(this).html("修改");
+						$(".switch").attr('class','btn btn-outline-secondary switch btn-lg');
+			    		$("#var0").html($("#txt0").val());
+			    		$("#var2").html($("#select").val());
+			    		$("#txt0").attr('class','form-control hide');
+			    		$("#txt0").val("");
+			    		$("#txt1").attr('class','form-control hide');
+			    		$("#txt1").val("");
+			    		$("#select").attr('class','form-select hide');
+			    		$("#select").val(0);
+			        	//家電
+			        	set(ref(db, 'webtest/'+$("#root").html()), {
+				    		name:  	$("#var0").html(),
+				    		state: 	$("#var1").html(),
+							pin:    $("#var2").html(),
+							root:   $("#root").html()
+					  	});
+				        get_list();
+		    		}else{
+		    			alert("每個欄位都需要輸入資料");
+		    		}
+		    	}
+		    });
+		    $(document).on('click','.switch',function(){
+	        	//家電
+	        	var BTN_val=($("#var1").html().indexOf("ON")!=-1)?"OFF":"ON";
+	        	$("#var1").html(BTN_val);
+	        	set(ref(db, 'webtest/'+$("#root").html()), {
+		    		state:  $("#var1").html(),
+		    		name:  	$("#var0").html(),
+					pin:    $("#var2").html(),
+					root:   $("#root").html()
+			  	});
+	        	$.get("/obj", { func:"0",obj:$("#root").html() ,state:BTN_val });//0 LED 風扇 門 蜂鳴器
+		    });
+		    $(".list").on('click',function () {
+		      	var state=($(this).attr('name').indexOf("ON")==-1)?"ON":"OFF";
+		      	if(state.indexOf("ON")!=-1){
+		       		$("#list").html(txt);
+		      		$("#list").attr('class','show pl-0');
+		      	}else{
+		      		get_list();
+		      		$("#list").attr('class','hide');
+		      	}
+		      	$(this).attr('name',state);
+		    });
+		</script>
+	</body>
+</html>
